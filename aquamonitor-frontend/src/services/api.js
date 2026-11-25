@@ -16,4 +16,16 @@ export const login = async (email, password) => {
   return response.data;
 };
 
+
+export const getCurrentUser = async () => {
+  const token = localStorage.getItem("access_token");
+
+  const response = await api.get("/auth/me/", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  return response.data;
+};
 export default api;
