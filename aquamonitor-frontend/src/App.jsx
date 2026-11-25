@@ -106,6 +106,22 @@ function App() {
             <pre>{JSON.stringify(result, null, 2)}</pre>
           </div>
         )}
+
+        <button
+  type="button"
+  onClick={async () => {
+    try {
+      const user = await getCurrentUser();
+      alert(JSON.stringify(user, null, 2));
+    } catch (error) {
+      alert(
+        JSON.stringify(error.response?.data || error.message)
+      );
+    }
+  }}
+>
+  Consultar mi usuario
+</button>
       </section>
     </main>
   );
