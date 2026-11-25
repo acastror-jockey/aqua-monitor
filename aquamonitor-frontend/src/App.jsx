@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { login } from "./services/api";
+import { login, getCurrentUser } from "./services/api";
 import "./index.css";
 
 function App() {
